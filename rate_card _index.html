@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Kamani Brown — Rate Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FCFAF7;
+    --surface:#ffffff;
+    --surface-2:#F4F1EC;
+    --ink:#111215;
+    --ink-soft:#3f444b;
+    --muted:#6b7280;
+    --line:#E7E0D6;
+    --line-strong:#D9CFC0;
+    --gold:#C5A27D;
+    --gold-deep:#9A7B57;
+    --gold-soft:#F3E9DB;
+    --dark:#0B0C0E;
+    --dark-2:#14161A;
+    --dark-line:rgba(255,255,255,.09);
+    --on-dark:#F5F1EA;
+    --on-dark-muted:#A8ADB6;
+    --sage:#E1EAE5;
+    --radius:18px;
+    --shadow:0 18px 40px rgba(11,12,14,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0E0F12;
+      --surface:#16181D;
+      --surface-2:#1B1E24;
+      --ink:#F2EFE9;
+      --ink-soft:#C9CDD4;
+      --muted:#9AA0AA;
+      --line:#2A2E36;
+      --line-strong:#3A3F49;
+      --gold-soft:#2A2318;
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--dark);
+    color:var(--on-dark);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(560px 320px at 12% -10%, rgba(197,162,125,.22), transparent 65%),
+      radial-gradient(480px 300px at 95% 110%, rgba(62,90,78,.28), transparent 65%);
+  }
+  .hero-inner{position:relative;padding:56px 0 0}
+  .hero-top{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+    padding-bottom:34px;
+  }
+  .brandline{display:flex;align-items:center;gap:14px;min-width:0}
+  .monogram{
+    width:46px;height:46px;flex:0 0 46px;border-radius:50%;
+    border:1px solid rgba(197,162,125,.55);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;letter-spacing:.06em;font-size:14px;
+  }
+  .brandline strong{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+  .brandline span{display:block;font-size:12.5px;color:var(--on-dark-muted);letter-spacing:.02em}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{
+    font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--dark-line);color:var(--on-dark-muted);
+    padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.03);white-space:nowrap;
+  }
+  .pill.gold{color:var(--gold);border-color:rgba(197,162,125,.4)}
+  h1{
+    margin:0;font-size:clamp(42px,7.5vw,76px);line-height:.98;font-weight:800;
+    letter-spacing:-.03em;text-transform:uppercase;
+  }
+  h1 .thin{display:block;font-weight:300;color:var(--on-dark-muted);letter-spacing:-.01em}
+  .hero-sub{
+    margin:20px 0 0;max-width:640px;font-size:clamp(16px,2.4vw,20px);
+    font-weight:300;color:#C9CDD4;line-height:1.55;
+  }
+  .hero-sub strong{color:#fff;font-weight:600}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:999px;
+    border:1px solid transparent;cursor:pointer;font-family:inherit;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-gold{background:var(--gold);color:#141210}
+  .btn-gold:hover{background:#D3B48E}
+  .btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(255,255,255,.28)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .btn-dark{background:var(--dark);color:#fff}
+  @media (prefers-color-scheme: dark){ .btn-dark{background:var(--gold);color:#141210} }
+  .btn-light{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
+  .btn svg{width:16px;height:16px;flex:0 0 16px}
+
+  .stats{
+    margin-top:44px;border-top:1px solid var(--dark-line);
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .stat{padding:22px 18px 26px;border-left:1px solid var(--dark-line)}
+  .stat:first-child{border-left:none;padding-left:0}
+  .stat b{display:block;font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.05}
+  .stat b em{font-style:normal;color:var(--gold)}
+  .stat span{display:block;margin-top:5px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted);font-weight:600}
+  @media (max-width:640px){
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{padding:18px 14px 20px}
+    .stat:nth-child(3){border-left:none;padding-left:0}
+    .stat:first-child{padding-left:0}
+  }
+
+  .marquee{
+    border-top:1px solid var(--dark-line);background:#111418;
+    overflow:hidden;padding:11px 0;position:relative;
+  }
+  .marquee-track{display:flex;width:max-content;animation:scroll 30s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track span{
+    font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(197,162,125,.65);padding:0 26px;white-space:nowrap;
+  }
+  .marquee-track i{font-style:normal;color:rgba(255,255,255,.15);align-self:center}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- Sections ---------- */
+  main{padding:8px 0 20px}
+  section.block{padding:52px 0 6px}
+  .sec-head{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+  .sec-head h2{margin:2px 0 0;font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .kicker{font-size:11.5px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+  @media (prefers-color-scheme: dark){ .kicker{color:var(--gold)} }
+  .sec-head p{margin:0;max-width:380px;font-size:14.5px;color:var(--muted);line-height:1.55}
+
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:860px){ .grid-3{grid-template-columns:1fr 1fr} }
+  @media (max-width:560px){ .grid-3,.grid-2{grid-template-columns:1fr} }
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);
+    position:relative;
+  }
+  .card.featured{border-color:var(--gold);border-width:1.5px}
+  .tag{
+    position:absolute;top:-11px;right:18px;background:var(--gold);color:#141210;
+    font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:4px 11px;border-radius:999px;
+  }
+  .card h3{margin:0;font-size:18px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
+  .card .desc{margin:0;font-size:14px;color:var(--muted);line-height:1.6;flex:1}
+  .price{display:flex;align-items:baseline;gap:8px;margin-top:6px}
+  .price b{font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .price span{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .card ul{margin:2px 0 0;padding:0;list-style:none}
+  .card ul li{font-size:13.5px;color:var(--ink-soft);padding:5px 0 5px 22px;position:relative;border-top:1px dashed var(--line)}
+  .card ul li::before{content:"";position:absolute;left:2px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .save-note{
+    margin-top:10px;font-size:13px;font-weight:700;color:var(--gold-deep);
+    background:var(--gold-soft);border-radius:10px;padding:8px 12px;
+  }
+  @media (prefers-color-scheme: dark){ .save-note{color:var(--gold)} }
+
+  .bundle{
+    margin-top:16px;background:var(--dark);color:var(--on-dark);border-radius:var(--radius);
+    padding:26px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;
+  }
+  .bundle h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .bundle p{margin:5px 0 0;font-size:14.5px;color:var(--on-dark-muted);max-width:560px;line-height:1.55}
+  .bundle .b-price{text-align:right}
+  .bundle .b-price b{display:block;font-size:34px;font-weight:800;color:#fff;line-height:1}
+  .bundle .b-price span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  @media (max-width:560px){ .bundle .b-price{text-align:left} }
+
+  /* Add-ons table */
+  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse}
+  th,td{text-align:left;padding:15px 20px;font-size:14.5px;vertical-align:top}
+  th{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);border-bottom:1px solid var(--line)}
+  td{border-bottom:1px solid var(--line);color:var(--ink-soft)}
+  tr:last-child td{border-bottom:none}
+  td.name{font-weight:700;color:var(--ink)}
+  td.price-cell{font-weight:800;color:var(--ink);white-space:nowrap;text-align:right}
+  th.price-cell{text-align:right}
+  @media (max-width:560px){
+    th,td{padding:13px 15px;font-size:13.5px}
+  }
+
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:860px){ .notes{grid-template-columns:1fr} }
+  .note{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .note h3{margin:0 0 6px;font-size:15px;font-weight:800}
+  .note p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.6}
+
+  /* Contact */
+  .contact{
+    margin-top:52px;background:var(--dark);color:var(--on-dark);border-radius:24px;
+    padding:38px 30px;text-align:center;position:relative;overflow:hidden;
+  }
+  .contact::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(480px 240px at 50% -20%, rgba(197,162,125,.25), transparent 65%)}
+  .contact h2{position:relative;margin:0;font-size:clamp(26px,4.5vw,38px);font-weight:800;letter-spacing:-.02em}
+  .contact p{position:relative;margin:12px auto 0;max-width:520px;color:var(--on-dark-muted);font-size:15.5px;line-height:1.6}
+  .contact .row{position:relative;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+  .copied{position:relative;margin-top:14px;font-size:13px;color:var(--gold);font-weight:700;min-height:20px}
+
+  /* Hosting guide */
+  .guide{margin-top:56px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+  .guide summary{
+    cursor:pointer;list-style:none;padding:22px 24px;display:flex;align-items:center;gap:14px;
+    font-weight:800;font-size:17px;
+  }
+  .guide summary::-webkit-details-marker{display:none}
+  .guide summary .chev{margin-left:auto;color:var(--gold-deep);transition:transform .2s ease;font-size:20px;line-height:1}
+  .guide[open ] summary .chev{transform:rotate(180deg)}
+  .guide summary small{display:block;font-weight:500;font-size:13px;color:var(--muted);margin-top:2px}
+  .guide-body{border-top:1px solid var(--line);padding:8px 24px 26px}
+  .guide-body ol{margin:14px 0 0;padding-left:22px}
+  .guide-body li{margin:12px 0;font-size:14.5px;color:var(--ink-soft);line-height:1.65}
+  .guide-body li strong{color:var(--ink)}
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
+    background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;
+    word-break:break-all;
+  }
+  .guide-body .tip{background:var(--gold-soft);border-radius:12px;padding:13px 16px;font-size:13.5px;color:var(--ink-soft);margin-top:18px;line-height:1.6}
+  .guide-body .tip strong{color:var(--ink)}
+
+  footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
+  footer a{color:var(--gold-deep);font-weight:700;text-decoration:none}
+  @media (prefers-color-scheme: dark){ footer a{color:var(--gold)} }
+
+  @media print{
+    .hero-ctas,.guide,.contact .row{display:none}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-top">
+      <div class="brandline">
+        <div class="monogram">KB</div>
+        <div>
+          <strong>Kamani Brown</strong>
+          <span>Tech reviews, tutorials &amp; DIY fixes — Apple &amp; PlayStation ecosystems</span>
+        </div>
+      </div>
+      <div class="hero-badges">
+        <span class="pill gold">All rates in USD</span>
+        <span class="pill">Starter packages · Oct 2026</span>
+      </div>
+    </div>
+
+    <h1>Rate Card <span class="thin">Sponsored content pricing</span></h1>
+    <p class="hero-sub">No-nonsense tech content for a <strong>search-driven, buying-intent audience</strong>. Every package is filmed, scripted, and edited in-house — energetic and relatable, never ad-like.</p>
+
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="mailto:kamanibrown@gmail.com?subject=Brand%20collaboration%20enquiry">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        kamanibrown@gmail.com
+      </a>
+      <a class="btn btn-ghost" href="https://youtube.com/@KamaniBrown" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.85-.46-5.58a2.9 2.9 0 0 0-2-2C18.88 4 12 4 12 4s-6.88 0-8.54.42a2.9 2.9 0 0 0-2 2C1 8.15 1 12 1 12s0 3.85.46 5.58a2.9 2.9 0 0 0 2 2C5.12 20 12 20 12 20s6.88 0 8.54-.42a2.9 2.9 0 0 0 2-2C23 15.85 23 12 23 12ZM9.75 15.5v-7L15.5 12l-5.75 3.5Z"/></svg>
+        YouTube Channel
+      </a>
+      <a class="btn btn-ghost" href="https://kamanibrown.github.io/kamanibrown" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
+        Portfolio &amp; Media Kit
+      </a>
+    </div>
+
+    <div class="stats" aria-label="Channel audience at a glance">
+      <div class="stat"><b>5K<em>+</em></b><span>Subscribers</span></div>
+      <div class="stat"><b>1.4M</b><span>Lifetime views</span></div>
+      <div class="stat"><b>64<em>%</em></b><span>US viewers · last 90 days</span></div>
+      <div class="stat"><b>141</b><span>Videos published</span></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>Tech Reviews</span><i>✦</i><span>Search-Driven Tutorials</span><i>✦</i><span>Product Demos</span><i>✦</i><span>Short-Form Video</span><i>✦</i><span>Apple Ecosystem</span><i>✦</i><span>PlayStation Ecosystem</span><i>✦</i><span>Desk Setups</span><i>✦</i><span>DIY Fixes</span><i>✦</i>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Brand reviews -->
+  <section class="block" id="reviews">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Brand Reviews</div>
+        <h2>Dedicated coverage on the channel</h2>
+      </div>
+      <p>Full reviews and integrations published on the Kamani Brown YouTube channel, with the product linked in the description.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card featured">
+        <span class="tag">Flagship</span>
+        <h3>Dedicated long-form review</h3>
+        <p class="desc">A full 5–8 minute YouTube review built entirely around your product — hands-on testing, honest verdict, and a clear buying recommendation.</p>
+        <div class="price"><b>$900</b><span>USD</span></div>
+        <ul>
+          <li>5–8 min dedicated video</li>
+          <li>Product link in description</li>
+          <li>SEO title &amp; custom thumbnail</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>YouTube Short</h3>
+        <p class="desc">One punchy vertical Short (under 60s) — a fast hook, the key benefit on screen, and a direct call to action.</p>
+        <div class="price"><b>$300</b><span>USD · single</span></div>
+        <ul>
+          <li>1 × vertical Short</li>
+          <li>Hook-first scripting</li>
+          <li>Link in pinned comment</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Shorts 2-pack</h3>
+        <p class="desc">Two Shorts for one product or campaign — two different angles, two chances to land in the feed.</p>
+        <div class="price"><b>$500</b><span>USD · 2 Shorts</span></div>
+        <div class="save-note">Save $100 vs. two singles</div>
+        <ul>
+          <li>2 × vertical Shorts</li>
+          <li>Two distinct hooks / angles</li>
+          <li>Ideal for a launch window</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>60–90s integration</h3>
+        <p class="desc">Your product woven into a relevant long-form video as a natural 60–90 second segment — verbally endorsed, not bolted on.</p>
+        <div class="price"><b>$500</b><span>USD</span></div>
+        <ul>
+          <li>60–90s in-video segment</li>
+          <li>Verbal endorsement</li>
+          <li>Product link in description</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>UGC-only video</h3>
+        <p class="desc">A finished video made for your channels, not mine — ready to post on your socials, product page, or ads library.</p>
+        <div class="price"><b>$250</b><span>USD</span></div>
+        <ul>
+          <li>Delivered as a finished file</li>
+          <li>Posted by your brand</li>
+          <li>Usage rights available as an add-on</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Something else in mind?</h3>
+        <p class="desc">Multi-video campaigns, launch coverage, or an ongoing partnership — tell me the goal and I'll shape a package around it.</p>
+        <div class="price"><b>Custom</b><span>On request</span></div>
+        <ul>
+          <li>Multi-video bundles</li>
+          <li>Ongoing partnerships</li>
+          <li>Launch-window coverage</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="bundle">
+      <div>
+        <h3>Bundle: Long-form review + 1 Short</h3>
+        <p>The dedicated review does the deep selling; the Short cutdown pushes it to a second audience in the feed. Booked together, you save $100 against buying them separately ($1,200).</p>
+      </div>
+      <div class="b-price"><b>$1,100</b><span>USD · bundle</span></div>
+    </div>
+  </section>
+
+  <!-- Tutorials -->
+  <section class="block" id="tutorials">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Search-Driven Tutorials</div>
+        <h2>Evergreen videos people find for years</h2>
+      </div>
+      <p>Tutorials are how this channel grows — viewers arrive with a problem and buying intent, and the content keeps working long after publish day.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>Product Feature</h3>
+        <p class="desc">A 60–90 second dedicated segment inside a search-driven tutorial — your product shown in a real workflow, verbally endorsed.</p>
+        <div class="price"><span style="align-self:center">From</span><b>$750</b><span>USD</span></div>
+        <ul>
+          <li>60–90s dedicated segment</li>
+          <li>Verbal endorsement</li>
+          <li>Link in description + pinned comment</li>
+        </ul>
+      </article>
+
+      <article class="card featured">
+        <span class="tag">Best value</span>
+        <h3>Problem-Solver Integration</h3>
+        <p class="desc">Your product <em>is</em> the solution in the tutorial — a full workflow demo that answers the exact question viewers searched for.</p>
+        <div class="price"><b>$2,000</b><span>USD</span></div>
+        <ul>
+          <li>Product as the tutorial solution</li>
+          <li>Full workflow demonstration</li>
+          <li>Audience Q&amp;A coverage</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Dedicated Tutorial</h3>
+        <p class="desc">The entire video built around your product — an SEO-titled, search-optimized tutorial designed to rank and convert.</p>
+        <div class="price"><b>$4,500</b><span>USD</span></div>
+        <ul>
+          <li>Full video built around the product</li>
+          <li>SEO title &amp; thumbnail</li>
+          <li>2 revision rounds included</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="bundle">
+      <div>
+        <h3>Quarterly package — 3 videos</h3>
+        <p>Lock in a quarter of tutorial coverage and take 15% off the combined package price. Ideal for brands with a product line or a launch calendar.</p>
+      </div>
+      <div class="b-price"><b>−15%</b><span>On 3 videos</span></div>
+    </div>
+  </section>
+
+  <!-- Add-ons -->
+  <section class="block" id="addons">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Add-Ons</div>
+        <h2>Available on request</h2>
+      </div>
+      <p>Add any of these to a package above. Priced flat unless noted, so there are no surprises at invoice time.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Add-on</th><th scope="col">What it covers</th><th scope="col" class="price-cell">Price (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="name">Usage rights — paid ads</td><td>Brand may use the video in paid advertising for 12 months</td><td class="price-cell">+$400 flat</td></tr>
+          <tr><td class="name">Multi-platform cross-posting</td><td>The video also posted to TikTok and Instagram Reels</td><td class="price-cell">+50% of package</td></tr>
+          <tr><td class="name">Whitelisting</td><td>Brand runs ads from my channel / handle</td><td class="price-cell">+$300 flat</td></tr>
+          <tr><td class="name">Category exclusivity</td><td>No competing product in the same category for 30 days</td><td class="price-cell">+$300 flat</td></tr>
+          <tr><td class="name">Rush delivery</td><td>Turnaround in under 7 days</td><td class="price-cell">+$200 flat</td></tr>
+          <tr><td class="name">Extra revision round</td><td>Per round, beyond the rounds included in your package (2 with the Dedicated Tutorial)</td><td class="price-cell">+$100 flat</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Good to know -->
+  <section class="block" id="notes">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Good to Know</div>
+        <h2>How bookings work</h2>
+      </div>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <h3>All rates in USD</h3>
+        <p>Every price on this card is quoted in US dollars. These are starter packages and are reviewed periodically as the channel grows.</p>
+      </div>
+      <div class="note">
+        <h3>Honest by default</h3>
+        <p>Reviews are genuine hands-on verdicts — that's exactly why the audience trusts them and why placements here convert. Sponsored videos are always disclosed.</p>
+      </div>
+      <div class="note">
+        <h3>Start with an email</h3>
+        <p>Tell me the product, your timeline, and the package you're eyeing. I'll confirm fit and availability before anything is booked.</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h2>Let's put your product in front of buyers</h2>
+      <p>Pick a package — or just tell me the goal — and email me. I reply to every serious enquiry personally.</p>
+      <div class="row">
+        <button class="btn btn-gold" id="copyEmail" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy my email
+        </button>
+        <a class="btn btn-ghost" href="mailto:kamanibrown@gmail.com?subject=Brand%20collaboration%20enquiry">Email me</a>
+        <a class="btn btn-ghost" href="https://youtube.com/@KamaniBrown" target="_blank" rel="noopener">Watch the channel</a>
+      </div>
+      <div class="copied" id="copiedMsg" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Kamani Brown · Moncton, NB, Canada · <a href="mailto:kamanibrown@gmail.com">kamanibrown@gmail.com</a><br>
+    Rates shown are starter packages in USD, current as of October 2026.
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var track = document.getElementById('marqueeTrack');
+    if (track) { track.innerHTML += track.innerHTML; }
+
+    var btn = document.getElementById('copyEmail');
+    var msg = document.getElementById('copiedMsg');
+    var email = 'kamanibrown@gmail.com';
+    function showCopied(){
+      msg.textContent = 'Copied: ' + email;
+      setTimeout(function(){ msg.textContent = ''; }, 2600);
+    }
+    if (btn) {
+      btn.addEventListener('click', function(){
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(showCopied, function(){ fallback(); });
+        } else { fallback(); }
+        function fallback(){
+          var ta = document.createElement('textarea');
+          ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); showCopied(); }
+          catch(e){ msg.textContent = email; }
+          document.body.removeChild(ta);
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>
