@@ -5,768 +5,667 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <link rel="icon" href="data:," />
-<title>Kamani Brown — Rate Card</title>
+<title>Rate Sheet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FCFAF7;
+    --bg:#f4f4f1;
     --surface:#ffffff;
-    --surface-2:#F4F1EC;
-    --ink:#111215;
-    --ink-soft:#3f444b;
-    --muted:#6b7280;
-    --line:#E7E0D6;
-    --line-strong:#D9CFC0;
-    --gold:#C5A27D;
-    --gold-deep:#9A7B57;
-    --gold-soft:#F3E9DB;
-    --dark:#0B0C0E;
-    --dark-2:#14161A;
-    --dark-line:rgba(255,255,255,.09);
-    --on-dark:#F5F1EA;
-    --on-dark-muted:#A8ADB6;
-    --sage:#E1EAE5;
-    --radius:18px;
-    --shadow:0 18px 40px rgba(11,12,14,.07);
+    --surface-2:#ececea;
+    --ink:#131311;
+    --muted:#5f5f5a;
+    --muted-2:#8a8a84;
+    --line:#e3e3de;
+    --accent:#bc3f0e;
+    --accent-ink:#9a340b;
+    --accent-bg:#fdf0e7;
+    --accent-line:#f3c9ae;
+    --dark-bar:#131311;
+    --dark-bar-ink:#ffffff;
+    --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.04);
+    --radius-card:18px;
+    --radius-sm:10px;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#0E0F12;
-      --surface:#16181D;
-      --surface-2:#1B1E24;
-      --ink:#F2EFE9;
-      --ink-soft:#C9CDD4;
-      --muted:#9AA0AA;
-      --line:#2A2E36;
-      --line-strong:#3A3F49;
-      --gold-soft:#2A2318;
-      --shadow:0 18px 40px rgba(0,0,0,.35);
+      --bg:#0f0f11;
+      --surface:#1a1a1e;
+      --surface-2:#232328;
+      --ink:#f4f4f0;
+      --muted:#a8a8a0;
+      --muted-2:#7c7c78;
+      --line:#2c2c31;
+      --accent:#ff8a4c;
+      --accent-ink:#ffb285;
+      --accent-bg:#2b1c11;
+      --accent-line:#4a2e1a;
+      --dark-bar:#f4f4f0;
+      --dark-bar-ink:#131311;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
     }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none !important} }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 96px}
+  @media (max-width:640px){ .wrap{padding:20px 16px 110px} }
 
-  /* ---------- Hero ---------- */
-  .hero{
-    background:var(--dark);
-    color:var(--on-dark);
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:
-      radial-gradient(560px 320px at 12% -10%, rgba(197,162,125,.22), transparent 65%),
-      radial-gradient(480px 300px at 95% 110%, rgba(62,90,78,.28), transparent 65%);
-  }
-  .hero-inner{position:relative;padding:56px 0 0}
-  .hero-top{
-    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
-    padding-bottom:34px;
-  }
-  .brandline{display:flex;align-items:center;gap:14px;min-width:0}
-  .monogram{
-    width:46px;height:46px;flex:0 0 46px;border-radius:50%;
-    border:1px solid rgba(197,162,125,.55);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    font-weight:800;letter-spacing:.06em;font-size:14px;
-  }
-  .brandline strong{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
-  .brandline span{display:block;font-size:12.5px;color:var(--on-dark-muted);letter-spacing:.02em}
-  .hero-badges{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{
-    font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-    border:1px solid var(--dark-line);color:var(--on-dark-muted);
-    padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.03);white-space:nowrap;
-  }
-  .pill.gold{color:var(--gold);border-color:rgba(197,162,125,.4)}
-  h1{
-    margin:0;font-size:clamp(42px,7.5vw,76px);line-height:.98;font-weight:800;
-    letter-spacing:-.03em;text-transform:uppercase;
-  }
-  h1 .thin{display:block;font-weight:300;color:var(--on-dark-muted);letter-spacing:-.01em}
-  .hero-sub{
-    margin:20px 0 0;max-width:640px;font-size:clamp(16px,2.4vw,20px);
-    font-weight:300;color:#C9CDD4;line-height:1.55;
-  }
-  .hero-sub strong{color:#fff;font-weight:600}
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
-    font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:999px;
-    border:1px solid transparent;cursor:pointer;font-family:inherit;
-    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-  }
-  .btn:active{transform:scale(.98)}
-  .btn-gold{background:var(--gold);color:#141210}
-  .btn-gold:hover{background:#D3B48E}
-  .btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(255,255,255,.28)}
-  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-  .btn-dark{background:var(--dark);color:#fff}
-  @media (prefers-color-scheme: dark){ .btn-dark{background:var(--gold);color:#141210} }
-  .btn-light{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
-  .btn svg{width:16px;height:16px;flex:0 0 16px}
+  /* Header */
+  .top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}
+  h1{font-family:Archivo,Inter,sans-serif;font-size:clamp(32px,5vw,52px);line-height:.95;letter-spacing:-.03em;margin:0;font-weight:800}
+  h1 span{color:var(--accent)}
+  .lede{margin:12px 0 0;color:var(--muted);font-size:16px;line-height:1.55;max-width:560px}
+  .lede strong{color:var(--ink);font-weight:600}
+  .top-actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+  .btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+  .btn.primary{background:var(--dark-bar);color:var(--dark-bar-ink);border-color:var(--dark-bar)}
+  .btn svg{width:14px;height:14px;flex:none}
 
-  .stats{
-    margin-top:44px;border-top:1px solid var(--dark-line);
-    display:grid;grid-template-columns:repeat(4,1fr);
-  }
-  .stat{padding:22px 18px 26px;border-left:1px solid var(--dark-line)}
-  .stat:first-child{border-left:none;padding-left:0}
-  .stat b{display:block;font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.05}
-  .stat b em{font-style:normal;color:var(--gold)}
-  .stat span{display:block;margin-top:5px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted);font-weight:600}
-  @media (max-width:640px){
-    .stats{grid-template-columns:1fr 1fr}
-    .stat{padding:18px 14px 20px}
-    .stat:nth-child(3){border-left:none;padding-left:0}
-    .stat:first-child{padding-left:0}
-  }
+  /* Quick stats bar */
+  .stats{margin-top:22px;background:var(--dark-bar);color:var(--dark-bar-ink);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media (max-width:700px){ .stats{grid-template-columns:1fr 1fr} }
+  .stat b{font-family:Archivo,sans-serif;font-size:20px;letter-spacing:-.02em;display:block;line-height:1}
+  .stat span{font-size:12.5px;opacity:.72;display:block;margin-top:5px;line-height:1.35}
 
-  .marquee{
-    border-top:1px solid var(--dark-line);background:#111418;
-    overflow:hidden;padding:11px 0;position:relative;
-  }
-  .marquee-track{display:flex;width:max-content;animation:scroll 30s linear infinite}
-  .marquee:hover .marquee-track{animation-play-state:paused}
-  .marquee-track span{
-    font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-    color:rgba(197,162,125,.65);padding:0 26px;white-space:nowrap;
-  }
-  .marquee-track i{font-style:normal;color:rgba(255,255,255,.15);align-self:center}
-  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  @media (prefers-reduced-motion: reduce){
-    .marquee-track{animation:none}
-    html{scroll-behavior:auto}
-  }
+  /* Toolbar */
+  .toolbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:16px 0 10px;margin-top:8px}
+  .toolbar-inner{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .search{flex:1;min-width:210px;display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:0 14px;height:42px}
+  .search svg{width:16px;height:16px;color:var(--muted-2);flex:none}
+  .search input{border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:14.5px;width:100%}
+  .search input::placeholder{color:var(--muted-2)}
+  .navpills{display:flex;gap:6px;flex-wrap:wrap}
+  .navpills a{text-decoration:none;font-size:13px;font-weight:600;padding:9px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+  .navpills a:hover{color:var(--ink)}
+  .noresults{display:none;margin-top:14px;padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14px;text-align:center}
+  .noresults.show{display:block}
 
-  /* ---------- Sections ---------- */
-  main{padding:8px 0 20px}
-  section.block{padding:52px 0 6px}
-  .sec-head{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
-  .sec-head h2{margin:2px 0 0;font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
-  .kicker{font-size:11.5px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
-  @media (prefers-color-scheme: dark){ .kicker{color:var(--gold)} }
-  .sec-head p{margin:0;max-width:380px;font-size:14.5px;color:var(--muted);line-height:1.55}
+  /* Sections */
+  section{margin-top:34px;scroll-margin-top:84px}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  h2{font-family:Archivo,sans-serif;font-size:24px;letter-spacing:-.02em;margin:0;font-weight:800}
+  .sec-sub{color:var(--muted);font-size:14.5px;line-height:1.55;margin:6px 0 0;max-width:640px}
+  .sec-tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent-line);padding:5px 9px;border-radius:999px;white-space:nowrap}
 
-  .grid{display:grid;gap:16px}
-  .grid-3{grid-template-columns:repeat(3,1fr)}
-  .grid-2{grid-template-columns:repeat(2,1fr)}
-  @media (max-width:860px){ .grid-3{grid-template-columns:1fr 1fr} }
-  @media (max-width:560px){ .grid-3,.grid-2{grid-template-columns:1fr} }
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  @media (max-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:600px){ .grid{grid-template-columns:1fr} }
+  .grid-2{grid-template-columns:1fr 1fr}
+  @media (max-width:700px){ .grid-2{grid-template-columns:1fr} }
 
-  .card{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);
-    position:relative;
-  }
-  .card.featured{border-color:var(--gold);border-width:1.5px}
-  .tag{
-    position:absolute;top:-11px;right:18px;background:var(--gold);color:#141210;
-    font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-    padding:4px 11px;border-radius:999px;
-  }
-  .card h3{margin:0;font-size:18px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
-  .card .desc{margin:0;font-size:14px;color:var(--muted);line-height:1.6;flex:1}
-  .price{display:flex;align-items:baseline;gap:8px;margin-top:6px}
-  .price b{font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1}
-  .price span{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  .card ul{margin:2px 0 0;padding:0;list-style:none}
-  .card ul li{font-size:13.5px;color:var(--ink-soft);padding:5px 0 5px 22px;position:relative;border-top:1px dashed var(--line)}
-  .card ul li::before{content:"";position:absolute;left:2px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-  .save-note{
-    margin-top:10px;font-size:13px;font-weight:700;color:var(--gold-deep);
-    background:var(--gold-soft);border-radius:10px;padding:8px 12px;
-  }
-  @media (prefers-color-scheme: dark){ .save-note{color:var(--gold)} }
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:100%}
+  .card.featured{border-color:var(--accent-line);background:linear-gradient(var(--surface),var(--surface)) padding-box}
+  .card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .card h3{font-family:Archivo,sans-serif;font-size:17px;line-height:1.2;letter-spacing:-.01em;margin:0;font-weight:700}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:var(--accent);color:#fff;white-space:nowrap}
+  .badge.soft{background:var(--accent-bg);color:var(--accent-ink);border:1px solid var(--accent-line)}
+  .badge.neutral{background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+  .card p{color:var(--muted);font-size:14px;line-height:1.55;margin:9px 0 0}
+  .price{margin-top:16px;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+  .price b{font-family:Archivo,sans-serif;font-size:34px;letter-spacing:-.03em;line-height:1;font-weight:800}
+  .price span{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:.02em}
+  .price .save{font-family:Inter,sans-serif;font-size:12.5px;font-weight:600;color:var(--accent-ink);background:var(--accent-bg);padding:3px 8px;border-radius:999px}
+  ul.feats{list-style:none;margin:14px 0 0;padding:13px 0 0;border-top:1px solid var(--line);display:grid;gap:7px}
+  ul.feats li{font-size:13.5px;line-height:1.45;color:var(--ink);padding-left:17px;position:relative}
+  ul.feats li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .card-foot{margin-top:auto;padding-top:16px;display:flex;gap:8px}
+  .mini-btn{flex:1;font:inherit;font-size:13px;font-weight:600;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);cursor:pointer;text-align:center}
+  .mini-btn:hover{border-color:var(--muted-2)}
+  .mini-btn.added{background:var(--dark-bar);color:var(--dark-bar-ink);border-color:var(--dark-bar)}
+  .mini-btn.copied{background:var(--accent);border-color:var(--accent);color:#fff}
+  .card.hidden,.addon-row.hidden{display:none !important}
 
-  .bundle{
-    margin-top:16px;background:var(--dark);color:var(--on-dark);border-radius:var(--radius);
-    padding:26px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;
-  }
-  .bundle h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.01em}
-  .bundle p{margin:5px 0 0;font-size:14.5px;color:var(--on-dark-muted);max-width:560px;line-height:1.55}
-  .bundle .b-price{text-align:right}
-  .bundle .b-price b{display:block;font-size:34px;font-weight:800;color:#fff;line-height:1}
-  .bundle .b-price span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700}
-  @media (max-width:560px){ .bundle .b-price{text-align:left} }
+  /* Bundle banner */
+  .bundle{margin-top:12px;background:var(--dark-bar);color:var(--dark-bar-ink);border-radius:18px;padding:22px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+  .bundle h3{font-family:Archivo,sans-serif;font-size:19px;margin:0;letter-spacing:-.01em}
+  .bundle p{margin:7px 0 0;font-size:14px;line-height:1.55;opacity:.78;max-width:560px}
+  .bundle-price{text-align:right}
+  .bundle-price b{font-family:Archivo,sans-serif;font-size:36px;letter-spacing:-.03em;display:block;line-height:1}
+  .bundle-price span{font-size:12.5px;opacity:.72}
+  .bundle .mini-btn{flex:none;background:transparent;color:inherit;border-color:rgba(127,127,127,.45);margin-top:12px;padding:9px 14px}
+  .bundle .mini-btn.added{background:var(--accent);border-color:var(--accent);color:#fff}
+  @media (max-width:600px){ .bundle-price{text-align:left} }
 
   /* Add-ons table */
-  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow);margin-top:16px}
   table{width:100%;border-collapse:collapse}
-  th,td{text-align:left;padding:15px 20px;font-size:14.5px;vertical-align:top}
-  th{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);border-bottom:1px solid var(--line)}
-  td{border-bottom:1px solid var(--line);color:var(--ink-soft)}
-  tr:last-child td{border-bottom:none}
-  td.name{font-weight:700;color:var(--ink)}
-  td.price-cell{font-weight:800;color:var(--ink);white-space:nowrap;text-align:right}
-  th.price-cell{text-align:right}
-  @media (max-width:560px){
-    th,td{padding:13px 15px;font-size:13.5px}
+  thead th{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;padding:13px 18px;background:var(--surface-2);border-bottom:1px solid var(--line);font-weight:600}
+  thead th:last-child{text-align:right}
+  tbody td{padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px;line-height:1.5}
+  tbody tr:last-child td{border-bottom:0}
+  td.name{font-weight:600;white-space:nowrap}
+  td.desc{color:var(--muted)}
+  td.price-cell{text-align:right;font-family:"IBM Plex Mono",monospace;font-weight:600;white-space:nowrap}
+  td.act{width:1%;white-space:nowrap}
+  .row-btn{font:inherit;font-size:12.5px;font-weight:600;padding:7px 11px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);cursor:pointer;color:var(--ink)}
+  .row-btn.added{background:var(--dark-bar);color:var(--dark-bar-ink);border-color:var(--dark-bar)}
+  @media (max-width:640px){
+    thead{display:none}
+    table,tbody,tr,td{display:block;width:100%}
+    tbody tr{padding:14px 16px;border-bottom:1px solid var(--line)}
+    tbody tr:last-child{border-bottom:0}
+    tbody td{padding:0;border:0}
+    td.name{white-space:normal;font-size:15px}
+    td.desc{margin-top:3px}
+    td.price-cell{text-align:left;margin-top:8px;font-size:15px}
+    td.act{margin-top:10px}
   }
 
-  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:860px){ .notes{grid-template-columns:1fr} }
-  .note{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .note h3{margin:0 0 6px;font-size:15px;font-weight:800}
-  .note p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.6}
+  /* Good to know */
+  .know{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  @media (max-width:800px){ .know{grid-template-columns:1fr} }
+  .know-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .know-card h3{font-size:15px;margin:0 0 7px;font-family:Archivo,sans-serif}
+  .know-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
 
-  /* Contact */
-  .contact{
-    margin-top:52px;background:var(--dark);color:var(--on-dark);border-radius:24px;
-    padding:38px 30px;text-align:center;position:relative;overflow:hidden;
-  }
-  .contact::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(480px 240px at 50% -20%, rgba(197,162,125,.25), transparent 65%)}
-  .contact h2{position:relative;margin:0;font-size:clamp(26px,4.5vw,38px);font-weight:800;letter-spacing:-.02em}
-  .contact p{position:relative;margin:12px auto 0;max-width:520px;color:var(--on-dark-muted);font-size:15.5px;line-height:1.6}
-  .contact .row{position:relative;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
-  .copied{position:relative;margin-top:14px;font-size:13px;color:var(--gold);font-weight:700;min-height:20px}
+  /* Estimator bar */
+  .estimator{position:fixed;left:50%;transform:translateX(-50%) translateY(140%);bottom:16px;z-index:40;width:min(680px,calc(100% - 24px));background:var(--dark-bar);color:var(--dark-bar-ink);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:14px;box-shadow:0 16px 40px rgba(0,0,0,.28);transition:transform .25s ease}
+  .estimator.show{transform:translateX(-50%) translateY(0)}
+  .estimator .est-main{flex:1;min-width:0}
+  .estimator b{font-family:Archivo,sans-serif;font-size:20px;letter-spacing:-.02em}
+  .estimator small{display:block;opacity:.72;font-size:12.5px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .est-btn{font:inherit;font-size:13px;font-weight:600;padding:9px 13px;border-radius:10px;border:1px solid rgba(127,127,127,.5);background:transparent;color:inherit;cursor:pointer;white-space:nowrap}
+  .est-btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
 
-  /* Hosting guide */
-  .guide{margin-top:56px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
-  .guide summary{
-    cursor:pointer;list-style:none;padding:22px 24px;display:flex;align-items:center;gap:14px;
-    font-weight:800;font-size:17px;
-  }
-  .guide summary::-webkit-details-marker{display:none}
-  .guide summary .chev{margin-left:auto;color:var(--gold-deep);transition:transform .2s ease;font-size:20px;line-height:1}
-  .guide[open ] summary .chev{transform:rotate(180deg)}
-  .guide summary small{display:block;font-weight:500;font-size:13px;color:var(--muted);margin-top:2px}
-  .guide-body{border-top:1px solid var(--line);padding:8px 24px 26px}
-  .guide-body ol{margin:14px 0 0;padding-left:22px}
-  .guide-body li{margin:12px 0;font-size:14.5px;color:var(--ink-soft);line-height:1.65}
-  .guide-body li strong{color:var(--ink)}
-  code{
-    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
-    background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;
-    word-break:break-all;
-  }
-  .guide-body .tip{background:var(--gold-soft);border-radius:12px;padding:13px 16px;font-size:13.5px;color:var(--ink-soft);margin-top:18px;line-height:1.6}
-  .guide-body .tip strong{color:var(--ink)}
+  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13px;line-height:1.6}
+  footer a{font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  .toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(10px);background:var(--dark-bar);color:var(--dark-bar-ink);font-size:13.5px;font-weight:600;padding:10px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;z-index:50}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
-  footer a{color:var(--gold-deep);font-weight:700;text-decoration:none}
-  @media (prefers-color-scheme: dark){ footer a{color:var(--gold)} }
-
-  @media print{
-    .hero-ctas,.guide,.contact .row{display:none}
-    body{background:#fff}
-  }
-
-  /* ---------- Preview additions: search, filter, estimate builder ---------- */
-  .rate-tools{margin:26px 0 6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
-  .rate-tools label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
-  .rate-tools input[type="search"]{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:12px;background:var(--bg);color:var(--ink)}
-  .rate-tools input[type="search"]:focus{outline:2px solid var(--gold);outline-offset:1px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .chip{font:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer}
-  .chip:hover{border-color:var(--gold)}
-  .chip.active{background:var(--dark);color:#fff;border-color:var(--dark)}
-  @media (prefers-color-scheme: dark){ .chip.active{background:var(--gold);color:#141210;border-color:var(--gold)} }
-  .rate-tools .hint{margin:12px 0 0;font-size:13px;color:var(--muted)}
-  .no-match{display:none;margin:26px 0 0;text-align:center;font-size:14.5px;color:var(--muted)}
-  .est-add{margin-top:12px;align-self:flex-start;font:inherit;font-size:13px;font-weight:700;padding:9px 16px;border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--gold-deep);cursor:pointer}
-  .est-add:hover{background:var(--gold-soft)}
-  .est-add.added{background:var(--gold);color:#141210;border-color:var(--gold)}
-  @media (prefers-color-scheme: dark){ .est-add{color:var(--gold)} .est-add.added{color:#141210} }
-  .bundle .est-add{margin-top:0}
-  td .est-add{margin:6px 0 0;padding:6px 12px;font-size:12px}
-  .est-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--dark);color:var(--on-dark);border-top:1px solid rgba(197,162,125,.4);box-shadow:0 -12px 30px rgba(0,0,0,.25)}
-  .est-bar-inner{max-width:1060px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
-  .est-bar .est-total{font-size:20px;font-weight:800;letter-spacing:-.01em;color:#fff;white-space:nowrap}
-  .est-bar .est-total small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-  .est-bar .est-items{flex:1;min-width:180px;font-size:13px;color:var(--on-dark-muted);line-height:1.5}
-  .est-bar .est-note{width:100%;font-size:12.5px;color:var(--gold)}
-  .est-bar .btn{padding:10px 18px;font-size:13.5px}
-  body{padding-bottom:96px}
-  @media print{ .rate-tools,.est-bar,.est-add{display:none!important} body{padding-bottom:0} }
+  /* Enquiry panel. A plain mailto: link tapped inside an embedded
+     in-app webview (framed page) is silently swallowed — the tap
+     looks dead and no mail app opens. The fixes applied here:
+     (1) the Open Mail App link carries target="_top" so the mailto
+     handoff is attempted by the top-level page, not the frame;
+     (2) its click is re-issued as a fresh top-targeted handoff;
+     (3) if the page is still visible ~1s later (the mail app never
+     took over), the address is copied and a visible note says so —
+     a tap never ends in silence. Gmail compose is a normal https
+     link and already worked, so it is kept as-is. */
+  .enquire-dialog{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px}
+  .enquire-dialog.open{display:flex}
+  .enquire-backdrop{position:absolute;inset:0;background:rgba(10,10,10,.55)}
+  .enquire-card{position:relative;width:min(480px,100%);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:28px 24px 22px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+  .enquire-card h3{font-family:Archivo,sans-serif;font-size:24px;letter-spacing:-.02em;margin:0;font-weight:800}
+  .enquire-note{margin:10px 0 0;color:var(--muted);font-size:14.5px;line-height:1.6}
+  .enquire-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font-size:15px;line-height:1;cursor:pointer}
+  .enquire-addr{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:11px 11px 11px 15px}
+  .enquire-addr span{font-family:"IBM Plex Mono",monospace;font-size:13.5px;word-break:break-all}
+  .enquire-actions{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .enquire-actions .btn{justify-content:center;width:100%;padding:12px 14px;font-size:14.5px}
+  .enquire-actions .btn.mail{background:var(--dark-bar);color:var(--dark-bar-ink);border-color:var(--dark-bar)}
+  .enquire-status{display:none;margin:14px 0 0;font-size:13.5px;line-height:1.55;color:var(--accent-ink);background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:10px;padding:10px 13px}
+  .enquire-status.show{display:block}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<header class="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-top">
-      <div class="brandline">
-        <div class="monogram">KB</div>
-        <div>
-          <strong>Kamani Brown</strong>
-          <span>Tech reviews, tutorials &amp; DIY fixes</span>
-        </div>
-      </div>
-      <div class="hero-badges">
-        <span class="pill gold">All rates in USD</span>
-        <span class="pill">Starter packages · Oct 2026</span>
-      </div>
+  <header class="top">
+    <div>
+      <h1>Rates, <span>at a glance.</span></h1>
+      <p class="lede">Your full rate card, mirrored here for quick reference during a negotiation. <strong>All prices in USD.</strong> This matches your live card — if you ever update one, update the other.</p>
     </div>
-
-    <h1>Rate Card <span class="thin">Sponsored content pricing</span></h1>
-    <p class="hero-sub">Tech content for a <strong>search-driven, buying-intent audience</strong>. Every package is filmed, scripted, and edited in-house, with energetic and relatable content for a unique and trustworthy perspective</p>
-
-    <div class="hero-ctas">
-      <a class="btn btn-gold" href="mailto:kamanibrown@gmail.com?subject=Brand%20collaboration%20enquiry">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-        kamanibrown@gmail.com
+    <div class="top-actions">
+      <a class="btn primary" href="https://kamanibrown.github.io/rate-card/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        Live rate card
       </a>
-      <a class="btn btn-ghost" href="https://youtube.com/@KamaniBrown" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.85-.46-5.58a2.9 2.9 0 0 0-2-2C18.88 4 12 4 12 4s-6.88 0-8.54.42a2.9 2.9 0 0 0-2 2C1 8.15 1 12 1 12s0 3.85.46 5.58a2.9 2.9 0 0 0 2 2C5.12 20 12 20 12 20s6.88 0 8.54-.42a2.9 2.9 0 0 0 2-2C23 15.85 23 12 23 12ZM9.75 15.5v-7L15.5 12l-5.75 3.5Z"/></svg>
-        YouTube Channel
-      </a>
-      <a class="btn btn-ghost" href="https://kamanibrown.github.io/kamanibrown" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
-        Portfolio &amp; Media Kit
-      </a>
+      <a class="btn" href="https://kamanibrown.github.io/kamanibrown/" target="_blank" rel="noopener">Portfolio &amp; media kit</a>
+      <a class="btn" href="https://www.youtube.com/@KamaniBrown" target="_blank" rel="noopener">YouTube channel</a>
+      <button class="btn" type="button" data-enquire>Enquire</button>
     </div>
+  </header>
 
-    <div class="stats" aria-label="Channel audience at a glance">
-      <div class="stat"><b>5K<em>+</em></b><span>Subscribers</span></div>
-      <div class="stat"><b>1.4M</b><span>Lifetime views</span></div>
-      <div class="stat"><b>40<em>%</em></b><span>US viewers</span></div>
-      <div class="stat"><b>141</b><span>Videos published</span></div>
-    </div>
+  <div class="stats" aria-label="Headline rates">
+    <div class="stat"><b>$900</b><span>Dedicated long-form review</span></div>
+    <div class="stat"><b>$300 / $500</b><span>YouTube Short — single / 2-pack</span></div>
+    <div class="stat"><b>$500</b><span>60–90s integration</span></div>
+    <div class="stat"><b>$350</b><span>UGC-only video (organic)</span></div>
   </div>
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track" id="marqueeTrack">
-      <span>Tech Reviews</span><i>✦</i><span>Search-Driven Tutorials</span><i>✦</i><span>Product Demos</span><i>✦</i><span>Short-Form Video</span><i>✦</i><span>Desk Setups</span><i>✦</i><span>DIY Fixes</span><i>✦</i>
+
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="searchInput" type="search" placeholder="Search rates — try “short”, “usage”, “tutorial”…" autocomplete="off" />
+      </label>
+      <nav class="navpills" aria-label="Sections">
+        <a href="#reviews">Reviews</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#addons">Add-ons</a>
+        <a href="#terms">Good to know</a>
+      </nav>
     </div>
+    <div class="noresults" id="noResults">Nothing matches that search. Clear it to see the full card again.</div>
   </div>
-</header>
 
-<main class="wrap">
-
-  <div class="rate-tools" id="rateTools">
-    <label for="rateSearch">Find a package</label>
-    <input type="search" id="rateSearch" placeholder="Search packages, add-ons, or topics" autocomplete="off">
-    <div class="chips" role="group" aria-label="Filter packages by type">
-      <button type="button" class="chip active" data-filter="all" aria-pressed="true">All</button>
-      <button type="button" class="chip" data-filter="review" aria-pressed="false">Brand reviews</button>
-      <button type="button" class="chip" data-filter="short" aria-pressed="false">Shorts</button>
-      <button type="button" class="chip" data-filter="tutorial" aria-pressed="false">Tutorials</button>
-      <button type="button" class="chip" data-filter="bundle" aria-pressed="false">Bundles</button>
-      <button type="button" class="chip" data-filter="addon" aria-pressed="false">Add-ons</button>
-    </div>
-    <p class="hint">Tap Add to estimate on any package to build a quote. Prices in USD. The quarterly package takes 15% off any 3 tutorial videos, mention it in your email.</p>
-  </div>
-  <p class="no-match" id="noMatch">No packages match that search. Try a different word or filter.</p>
-
-
-  <!-- Brand reviews -->
-  <section class="block" id="reviews">
+  <!-- BRAND REVIEWS -->
+  <section id="reviews">
     <div class="sec-head">
-      <div>
-        <div class="kicker">Brand Reviews</div>
-        <h2>Dedicated coverage on the channel</h2>
-      </div>
-      <p>Full reviews and integrations published on the Kamani Brown YouTube channel, with the product linked in the description.</p>
+      <h2>Brand Reviews</h2>
+      <span class="sec-tag">Dedicated coverage</span>
     </div>
+    <p class="sec-sub">Dedicated coverage on the channel. Full reviews and integrations published on the Kamani Brown YouTube channel, with the product linked in the description.</p>
 
-    <div class="grid grid-3">
-      <article class="card featured" data-cat="review">
-        <span class="tag">Flagship</span>
-        <h3>Dedicated long-form review</h3>
-        <p class="desc">A full 5–8 minute YouTube review built entirely around your product — hands-on testing, honest verdict, and a clear buying recommendation.</p>
+    <div class="grid">
+      <article class="card featured" data-search="dedicated long-form review flagship full review 900" data-name="Dedicated long-form review" data-price="900" data-label="$900 USD">
+        <div class="card-top"><h3>Dedicated long-form review</h3><span class="badge">Flagship</span></div>
+        <p>A full 5–8 minute YouTube review built entirely around your product — hands-on testing, honest verdict, and a clear buying recommendation.</p>
         <div class="price"><b>$900</b><span>USD</span></div>
-        <ul>
-          <li>5–8 min dedicated video</li>
-          <li>Product link in description</li>
-          <li>SEO title &amp; custom thumbnail</li>
-        </ul><button type="button" class="est-add" data-est-key="review" data-est-name="Dedicated long-form review" data-est-price="900" data-est-kind="package">Add to estimate</button>
+        <ul class="feats"><li>5–8 min dedicated video</li><li>Product link in description</li><li>SEO title &amp; custom thumbnail</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card" data-cat="short">
-        <h3>YouTube Short</h3>
-        <p class="desc">One punchy vertical Short (under 60s) — a fast hook, the key benefit on screen, and a direct call to action.</p>
+      <article class="card" data-search="youtube short single vertical 300" data-name="YouTube Short (single)" data-price="300" data-label="$300 USD · single">
+        <div class="card-top"><h3>YouTube Short</h3><span class="badge neutral">Single</span></div>
+        <p>One punchy vertical Short (under 60s) — a fast hook, the key benefit on screen, and a direct call to action.</p>
         <div class="price"><b>$300</b><span>USD · single</span></div>
-        <ul>
-          <li>1 × vertical Short</li>
-          <li>Hook-first scripting</li>
-          <li>Link in pinned comment</li>
-        </ul><button type="button" class="est-add" data-est-key="short" data-est-name="YouTube Short (single)" data-est-price="300" data-est-kind="package">Add to estimate</button>
+        <ul class="feats"><li>1 × vertical Short</li><li>Hook-first scripting</li><li>Link in pinned comment</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card" data-cat="short">
-        <h3>Shorts 2-pack</h3>
-        <p class="desc">Two Shorts for one product or campaign — two different angles, two chances to land in the feed.</p>
-        <div class="price"><b>$500</b><span>USD · 2 Shorts</span></div>
-        <div class="save-note">Save $100 vs. two singles</div>
-        <ul>
-          <li>2 × vertical Shorts</li>
-          <li>Two distinct hooks / angles</li>
-          <li>Ideal for a launch window</li>
-        </ul><button type="button" class="est-add" data-est-key="shorts2" data-est-name="Shorts 2-pack" data-est-price="500" data-est-kind="package">Add to estimate</button>
+      <article class="card" data-search="shorts 2-pack two shorts bundle 500 launch" data-name="Shorts 2-pack" data-price="500" data-label="$500 USD · 2 Shorts">
+        <div class="card-top"><h3>Shorts 2-pack</h3><span class="badge soft">Save $100</span></div>
+        <p>Two Shorts for one product or campaign — two different angles, two chances to land in the feed.</p>
+        <div class="price"><b>$500</b><span>USD · 2 Shorts</span><span class="save">Save $100 vs. two singles</span></div>
+        <ul class="feats"><li>2 × vertical Shorts</li><li>Two distinct hooks / angles</li><li>Ideal for a launch window</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card" data-cat="review">
-        <h3>60–90s integration</h3>
-        <p class="desc">Your product woven into a relevant long-form video as a natural 60–90 second segment — verbally endorsed, not bolted on.</p>
+      <article class="card" data-search="60 90s integration segment endorsement 500" data-name="60–90s integration" data-price="500" data-label="$500 USD">
+        <div class="card-top"><h3>60–90s integration</h3></div>
+        <p>Your product woven into a relevant long-form video as a natural 60–90 second segment — verbally endorsed, not bolted on.</p>
         <div class="price"><b>$500</b><span>USD</span></div>
-        <ul>
-          <li>60–90s in-video segment</li>
-          <li>Verbal endorsement</li>
-          <li>Product link in description</li>
-        </ul><button type="button" class="est-add" data-est-key="integration" data-est-name="60-90s integration" data-est-price="500" data-est-kind="package">Add to estimate</button>
+        <ul class="feats"><li>60–90s in-video segment</li><li>Verbal endorsement</li><li>Product link in description</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card" data-cat="review">
-        <h3>UGC-only video</h3>
-        <p class="desc">A finished video made for your channels, not mine — yours to post organically on your own socials and product page.</p>
+      <article class="card" data-search="ugc only video ugc-only organic 350 brand channels" data-name="UGC-only video" data-price="350" data-label="$350 USD">
+        <div class="card-top"><h3>UGC-only video</h3><span class="badge neutral">Organic</span></div>
+        <p>A finished video made for your channels, not mine — yours to post organically on your own socials and product page.</p>
         <div class="price"><b>$350</b><span>USD</span></div>
-        <ul>
-          <li>Delivered as a finished file</li>
-          <li>Organic posting on your socials &amp; product page</li>
-          <li>Paid ads require the usage rights add-on</li>
-        </ul><button type="button" class="est-add" data-est-key="ugc" data-est-name="UGC-only video" data-est-price="350" data-est-kind="package">Add to estimate</button>
+        <ul class="feats"><li>Delivered as a finished file</li><li>Organic posting on your socials &amp; product page</li><li>Paid ads require the usage rights add-on</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card" data-cat="review">
-        <h3>Something else in mind?</h3>
-        <p class="desc">Multi-video campaigns, launch coverage, or an ongoing partnership — tell me the goal and I'll shape a package around it.</p>
+      <article class="card" data-search="custom something else campaign partnership multi-video" data-name="Custom package" data-price="0" data-label="Custom — on request">
+        <div class="card-top"><h3>Something else in mind?</h3></div>
+        <p>Multi-video campaigns, launch coverage, or an ongoing partnership — tell me the goal and I’ll shape a package around it.</p>
         <div class="price"><b>Custom</b><span>On request</span></div>
-        <ul>
-          <li>Multi-video bundles</li>
-          <li>Ongoing partnerships</li>
-          <li>Launch-window coverage</li>
-        </ul>
+        <ul class="feats"><li>Multi-video bundles</li><li>Ongoing partnerships</li><li>Launch-window coverage</li></ul>
+        <div class="card-foot"><button class="mini-btn copy-btn" type="button" style="flex:1">Copy rate</button></div>
       </article>
     </div>
 
-    <div class="bundle" data-cat="bundle">
+    <div class="bundle" data-search="bundle long-form review plus short 1100" data-name="Bundle: Long-form review + 1 Short" data-price="1100" data-label="$1,100 USD · bundle">
       <div>
         <h3>Bundle: Long-form review + 1 Short</h3>
         <p>The dedicated review does the deep selling; the Short cutdown pushes it to a second audience in the feed. Booked together, you save $100 against buying them separately ($1,200).</p>
+        <button class="mini-btn add-btn" type="button">+ Add bundle to estimate</button>
       </div>
-      <div class="b-price"><b>$1,100</b><span>USD · bundle</span><button type="button" class="est-add" data-est-key="bundle" data-est-name="Bundle: Long-form review + 1 Short" data-est-price="1100" data-est-kind="package">Add to estimate</button></div>
+      <div class="bundle-price"><b>$1,100</b><span>USD · bundle</span></div>
     </div>
   </section>
 
-  <!-- Tutorials -->
-  <section class="block" id="tutorials">
+  <!-- TUTORIALS -->
+  <section id="tutorials">
     <div class="sec-head">
-      <div>
-        <div class="kicker">Search-Driven Tutorials</div>
-        <h2>Evergreen videos people find for years</h2>
-      </div>
-      <p>Tutorials are how this channel grows — viewers arrive with a problem and buying intent, and the content keeps working long after publish day.</p>
+      <h2>Search-Driven Tutorials</h2>
+      <span class="sec-tag">Evergreen</span>
     </div>
+    <p class="sec-sub">Evergreen videos people find for years. Tutorials are how this channel grows — viewers arrive with a problem and buying intent, and the content keeps working long after publish day.</p>
 
-    <div class="grid grid-3">
-      <article class="card" data-cat="tutorial">
-        <h3>Product Feature</h3>
-        <p class="desc">A 60–90 second dedicated segment inside a search-driven tutorial — your product shown in a real workflow, verbally endorsed.</p>
-        <div class="price"><span style="align-self:center">From</span><b>$750</b><span>USD</span></div>
-        <ul>
-          <li>60–90s dedicated segment</li>
-          <li>Verbal endorsement</li>
-          <li>Link in description + pinned comment</li>
-        </ul><button type="button" class="est-add" data-est-key="feature" data-est-name="Product Feature" data-est-price="750" data-est-kind="package">Add to estimate</button>
+    <div class="grid">
+      <article class="card" data-search="tutorial product feature segment 750 from" data-name="Tutorial — Product Feature" data-price="750" data-label="From $750 USD">
+        <div class="card-top"><h3>Product Feature</h3></div>
+        <p>A 60–90 second dedicated segment inside a search-driven tutorial — your product shown in a real workflow, verbally endorsed.</p>
+        <div class="price"><b><span style="font-size:16px;font-family:Inter,sans-serif;font-weight:600;color:var(--muted)">From</span> $750</b><span>USD</span></div>
+        <ul class="feats"><li>60–90s dedicated segment</li><li>Verbal endorsement</li><li>Link in description + pinned comment</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card featured" data-cat="tutorial">
-        <span class="tag">Best value</span>
-        <h3>Problem-Solver Integration</h3>
-        <p class="desc">Your product <em>is</em> the solution in the tutorial — a full workflow demo that answers the exact question viewers searched for.</p>
+      <article class="card featured" data-search="problem-solver integration tutorial solution 2000 best value" data-name="Problem-Solver Integration" data-price="2000" data-label="$2,000 USD">
+        <div class="card-top"><h3>Problem-Solver Integration</h3><span class="badge">Best value</span></div>
+        <p>Your product <em>is</em> the solution in the tutorial — a full workflow demo that answers the exact question viewers searched for.</p>
         <div class="price"><b>$2,000</b><span>USD</span></div>
-        <ul>
-          <li>Product as the tutorial solution</li>
-          <li>Full workflow demonstration</li>
-          <li>Audience Q&amp;A coverage</li>
-        </ul><button type="button" class="est-add" data-est-key="solver" data-est-name="Problem-Solver Integration" data-est-price="2000" data-est-kind="package">Add to estimate</button>
+        <ul class="feats"><li>Product as the tutorial solution</li><li>Full workflow demonstration</li><li>Audience Q&amp;A coverage</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
 
-      <article class="card" data-cat="tutorial">
-        <h3>Dedicated Tutorial</h3>
-        <p class="desc">The entire video built around your product — an SEO-titled, search-optimized tutorial designed to rank and convert.</p>
+      <article class="card" data-search="dedicated tutorial full video seo 4500" data-name="Dedicated Tutorial" data-price="4500" data-label="$4,500 USD">
+        <div class="card-top"><h3>Dedicated Tutorial</h3></div>
+        <p>The entire video built around your product — an SEO-titled, search-optimized tutorial designed to rank and convert.</p>
         <div class="price"><b>$4,500</b><span>USD</span></div>
-        <ul>
-          <li>Full video built around the product</li>
-          <li>SEO title &amp; thumbnail</li>
-          <li>2 revision rounds included</li>
-        </ul><button type="button" class="est-add" data-est-key="tutorial" data-est-name="Dedicated Tutorial" data-est-price="4500" data-est-kind="package">Add to estimate</button>
+        <ul class="feats"><li>Full video built around the product</li><li>SEO title &amp; thumbnail</li><li>2 revision rounds included</li></ul>
+        <div class="card-foot"><button class="mini-btn add-btn" type="button">+ Estimate</button><button class="mini-btn copy-btn" type="button">Copy rate</button></div>
       </article>
     </div>
 
-    <div class="bundle" data-cat="bundle">
+    <div class="bundle" style="background:var(--surface);color:var(--ink);border:1px solid var(--line)" data-search="quarterly package 3 videos 15% discount quarter">
       <div>
         <h3>Quarterly package — 3 videos</h3>
-        <p>Lock in a quarter of tutorial coverage and take 15% off the combined package price. Ideal for brands with a product line or a launch calendar.</p>
+        <p style="opacity:1;color:var(--muted)">Lock in a quarter of tutorial coverage and take 15% off the combined package price. Ideal for brands with a product line or a launch calendar.</p>
       </div>
-      <div class="b-price"><b>−15%</b><span>On 3 videos</span></div>
+      <div class="bundle-price"><b>−15%</b><span style="opacity:1;color:var(--muted)">On 3 videos</span></div>
     </div>
   </section>
 
-  <!-- Add-ons -->
-  <section class="block" id="addons">
+  <!-- ADD-ONS -->
+  <section id="addons">
     <div class="sec-head">
-      <div>
-        <div class="kicker">Add-Ons</div>
-        <h2>Available on request</h2>
-      </div>
-      <p>Add any of these to a package above. Priced flat unless noted, so there are no surprises at invoice time.</p>
+      <h2>Add-Ons</h2>
+      <span class="sec-tag">Available on request</span>
     </div>
+    <p class="sec-sub">Add any of these to a package above. Priced flat unless noted, so there are no surprises at invoice time.</p>
 
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th scope="col">Add-on</th><th scope="col">What it covers</th><th scope="col" class="price-cell">Price (USD)</th></tr>
-        </thead>
+        <thead><tr><th>Add-on</th><th>What it covers</th><th>Price (USD)</th><th></th></tr></thead>
         <tbody>
-          <tr data-cat="addon"><td class="name">Usage rights — paid ads</td><td>Brand may use the video in paid advertising for 12 months</td><td class="price-cell">+$400 flat<br><button type="button" class="est-add" data-est-key="usage" data-est-name="Usage rights, paid ads" data-est-price="400" data-est-kind="addon">Add to estimate</button></td></tr>
-          <tr data-cat="addon"><td class="name">Multi-platform cross-posting</td><td>The video also posted to TikTok and Instagram Reels</td><td class="price-cell">+50% of package<br><button type="button" class="est-add" data-est-key="crosspost" data-est-name="Multi-platform cross-posting (+50% of packages)" data-est-kind="percent" data-est-percent="50">Add to estimate</button></td></tr>
-          <tr data-cat="addon"><td class="name">Whitelisting</td><td>Brand runs ads from my channel / handle</td><td class="price-cell">+$300 flat<br><button type="button" class="est-add" data-est-key="whitelist" data-est-name="Whitelisting" data-est-price="300" data-est-kind="addon">Add to estimate</button></td></tr>
-          <tr data-cat="addon"><td class="name">Category exclusivity</td><td>No competing product in the same category for 30 days</td><td class="price-cell">+$300 flat<br><button type="button" class="est-add" data-est-key="exclusivity" data-est-name="Category exclusivity" data-est-price="300" data-est-kind="addon">Add to estimate</button></td></tr>
-          <tr data-cat="addon"><td class="name">Rush delivery</td><td>Turnaround in under 7 days</td><td class="price-cell">+$200 flat<br><button type="button" class="est-add" data-est-key="rush" data-est-name="Rush delivery" data-est-price="200" data-est-kind="addon">Add to estimate</button></td></tr>
-          <tr data-cat="addon"><td class="name">Extra revision round</td><td>Per round, beyond the rounds included in your package (2 with the Dedicated Tutorial)</td><td class="price-cell">+$100 flat<br><button type="button" class="est-add" data-est-key="revision" data-est-name="Extra revision round" data-est-price="100" data-est-kind="addon">Add to estimate</button></td></tr>
+          <tr class="addon-row" data-search="usage rights paid ads advertising 12 months 400" data-name="Usage rights — paid ads" data-price="400" data-label="+$400 flat">
+            <td class="name">Usage rights — paid ads</td>
+            <td class="desc">Brand may use the video in paid advertising for 12 months</td>
+            <td class="price-cell">+$400 flat</td>
+            <td class="act"><button class="row-btn add-btn" type="button">+ Add</button></td>
+          </tr>
+          <tr class="addon-row" data-search="multi-platform cross-posting cross posting tiktok instagram reels 50% meta" data-name="Multi-platform cross-posting" data-price="0" data-label="+50% of package">
+            <td class="name">Multi-platform cross-posting</td>
+            <td class="desc">The video also posted to TikTok and Instagram Reels</td>
+            <td class="price-cell">+50% of package</td>
+            <td class="act"><button class="row-btn copy-btn" type="button">Copy</button></td>
+          </tr>
+          <tr class="addon-row" data-search="whitelisting ads from channel handle 300" data-name="Whitelisting" data-price="300" data-label="+$300 flat">
+            <td class="name">Whitelisting</td>
+            <td class="desc">Brand runs ads from my channel / handle</td>
+            <td class="price-cell">+$300 flat</td>
+            <td class="act"><button class="row-btn add-btn" type="button">+ Add</button></td>
+          </tr>
+          <tr class="addon-row" data-search="category exclusivity competing 30 days 300" data-name="Category exclusivity" data-price="300" data-label="+$300 flat">
+            <td class="name">Category exclusivity</td>
+            <td class="desc">No competing product in the same category for 30 days</td>
+            <td class="price-cell">+$300 flat</td>
+            <td class="act"><button class="row-btn add-btn" type="button">+ Add</button></td>
+          </tr>
+          <tr class="addon-row" data-search="rush delivery turnaround under 7 days 200" data-name="Rush delivery" data-price="200" data-label="+$200 flat">
+            <td class="name">Rush delivery</td>
+            <td class="desc">Turnaround in under 7 days</td>
+            <td class="price-cell">+$200 flat</td>
+            <td class="act"><button class="row-btn add-btn" type="button">+ Add</button></td>
+          </tr>
+          <tr class="addon-row" data-search="extra revision round per round 100" data-name="Extra revision round" data-price="100" data-label="+$100 flat">
+            <td class="name">Extra revision round</td>
+            <td class="desc">Per round, beyond the rounds included in your package (2 with the Dedicated Tutorial)</td>
+            <td class="price-cell">+$100 flat</td>
+            <td class="act"><button class="row-btn add-btn" type="button">+ Add</button></td>
+          </tr>
         </tbody>
       </table>
     </div>
+    <p style="color:var(--muted);font-size:13.5px;line-height:1.6;margin:12px 2px 0">Negotiation note from your own playbook: Meta cross-posting (Instagram + Facebook connected) is two platforms in one post — price it as a package, not as a single-platform add-on. Your TORRAS precedent was $300 for both Shorts cross-posted to Meta, on top of the base package.</p>
   </section>
 
-  <!-- Good to know -->
-  <section class="block" id="notes">
+  <!-- GOOD TO KNOW -->
+  <section id="terms">
     <div class="sec-head">
-      <div>
-        <div class="kicker">Good to Know</div>
-        <h2>How bookings work</h2>
-      </div>
+      <h2>Good to Know</h2>
+      <span class="sec-tag">How bookings work</span>
     </div>
-    <div class="notes">
-      <div class="note">
+    <div class="know">
+      <div class="know-card">
         <h3>All rates in USD</h3>
         <p>Every price on this card is quoted in US dollars. These are starter packages and are reviewed periodically as the channel grows.</p>
       </div>
-      <div class="note">
+      <div class="know-card">
         <h3>Honest by default</h3>
-        <p>Reviews are genuine hands-on verdicts — that's exactly why the audience trusts them and why placements here convert. Sponsored videos are always disclosed.</p>
+        <p>Reviews are genuine hands-on verdicts — that’s exactly why the audience trusts them and why placements here convert. Sponsored videos are always disclosed.</p>
       </div>
-      <div class="note">
+      <div class="know-card">
+        <h3>Payment by bank transfer</h3>
+        <p>Payment by bank transfer (Wise) is preferred. PayPal and Payoneer are also available — payment-processing fees are on the brand or grossed up in the quote, so the quoted fee clears in full. Full payment details are shared privately once a booking is confirmed.</p>
+      </div>
+      <div class="know-card">
         <h3>Start with an email</h3>
-        <p>Tell me the product, your timeline, and the package you're eyeing. I'll confirm fit and availability before anything is booked.</p>
+        <p>Tell me the product, your timeline, and the package you’re eyeing. I’ll confirm fit and availability before anything is booked.</p>
+        <button class="mini-btn" type="button" data-enquire style="margin-top:12px;width:100%">Enquire by email</button>
       </div>
-    </div>
-
-    <div class="contact">
-      <h2>Let's put your product in front of buyers</h2>
-      <p>Pick a package — or just tell me the goal — and email me. I reply to every serious enquiry personally.</p>
-      <div class="row">
-        <button class="btn btn-gold" id="copyEmail" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          Copy my email
-        </button>
-        <a class="btn btn-ghost" href="mailto:kamanibrown@gmail.com?subject=Brand%20collaboration%20enquiry">Email me</a>
-        <a class="btn btn-ghost" href="https://youtube.com/@KamaniBrown" target="_blank" rel="noopener">Watch the channel</a>
-      </div>
-      <div class="copied" id="copiedMsg" role="status" aria-live="polite"></div>
     </div>
   </section>
 
-</main>
+  <footer>
+    <span>Source of truth: <a href="https://kamanibrown.github.io/rate-card/" target="_blank" rel="noopener">kamanibrown.github.io/rate-card</a> — this page mirrors it for in-app reference.</span>
+    <span>Portfolio: <a href="https://kamanibrown.github.io/kamanibrown/" target="_blank" rel="noopener">Media kit &amp; portfolio</a> · <a href="https://www.youtube.com/@KamaniBrown" target="_blank" rel="noopener">@KamaniBrown</a></span>
+  </footer>
+</div>
 
+<div class="estimator" id="estimator" aria-live="polite">
+  <div class="est-main">
+    <b id="estTotal">$0</b>
+    <small id="estDetail">0 items in estimate</small>
+  </div>
+  <button class="est-btn" id="estClear" type="button">Clear</button>
+  <button class="est-btn solid" id="estCopy" type="button">Copy estimate</button>
+</div>
 
-  <div class="est-bar" id="estBar" role="region" aria-label="Estimate builder">
-    <div class="est-bar-inner">
-      <div class="est-total"><small>Your estimate</small><span id="estTotal">$0</span> <span style="font-size:13px;color:var(--on-dark-muted)">USD</span></div>
-      <div class="est-items" id="estItems">No items yet. Tap Add to estimate on any package to build a quote.</div>
-      <button class="btn btn-gold" id="copyEstimate" type="button">Copy estimate</button>
-      <button class="btn btn-ghost" id="clearEstimate" type="button">Clear</button>
-      <div class="est-note" id="estNote" hidden></div>
+<div class="toast" id="toast">Copied</div>
+
+<div class="enquire-dialog" id="enquireDialog" aria-hidden="true">
+  <div class="enquire-backdrop" data-enquire-close></div>
+  <div class="enquire-card" role="dialog" aria-modal="true" aria-labelledby="enquireTitle">
+    <button class="enquire-close" type="button" data-enquire-close aria-label="Close enquiry panel">✕</button>
+    <h3 id="enquireTitle">Start your enquiry</h3>
+    <p class="enquire-note">Pick how you’d like to reach out — or copy the address and use any mail app you like.</p>
+    <div class="enquire-addr">
+      <span>kamanibrown@gmail.com</span>
+      <button type="button" class="mini-btn" id="enquireCopy" style="flex:none">Copy email</button>
     </div>
+    <div class="enquire-actions">
+      <a class="btn mail" id="enquireMail" href="mailto:kamanibrown@gmail.com?subject=Brand%20collaboration%20enquiry" target="_top">Open Mail App</a>
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kamanibrown@gmail.com&amp;su=Brand%20collaboration%20enquiry" target="_blank" rel="noopener">Compose in Gmail</a>
+    </div>
+    <p class="enquire-status" id="enquireStatus" role="status"></p>
   </div>
-
-<footer>
-  <div class="wrap">
-    Kamani Brown · Moncton, NB, Canada · <a href="mailto:kamanibrown@gmail.com">kamanibrown@gmail.com</a><br>
-    Rates shown are starter packages in USD, current as of October 2026.
-  </div>
-</footer>
-
-<script>
-  (function(){
-    var track = document.getElementById('marqueeTrack');
-    if (track) { track.innerHTML += track.innerHTML; }
-
-    var btn = document.getElementById('copyEmail');
-    var msg = document.getElementById('copiedMsg');
-    var email = 'kamanibrown@gmail.com';
-    function showCopied(){
-      msg.textContent = 'Copied: ' + email;
-      setTimeout(function(){ msg.textContent = ''; }, 2600);
-    }
-    if (btn) {
-      btn.addEventListener('click', function(){
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(email).then(showCopied, function(){ fallback(); });
-        } else { fallback(); }
-        function fallback(){
-          var ta = document.createElement('textarea');
-          ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
-          document.body.appendChild(ta); ta.select();
-          try { document.execCommand('copy'); showCopied(); }
-          catch(e){ msg.textContent = email; }
-          document.body.removeChild(ta);
-        }
-      });
-    }
-  })();
-</script>
+</div>
 
 <script>
 (function(){
-  var fmt = function(n){ return '$' + n.toLocaleString('en-US'); };
-  /* ----- Search and filter ----- */
-  var searchInput = document.getElementById('rateSearch');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('#rateTools .chip'));
-  var noMatch = document.getElementById('noMatch');
-  var activeFilter = 'all';
-  function applyFilter(){
-    var q = (searchInput.value || '').trim().toLowerCase();
-    var visible = 0;
-    document.querySelectorAll('[data-cat]').forEach(function(el){
-      var cat = el.getAttribute('data-cat');
-      var text = el.textContent.toLowerCase();
-      var okCat = (activeFilter === 'all' || cat === activeFilter);
-      var okQ = (!q || text.indexOf(q) !== -1);
-      var show = okCat && okQ;
-      el.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    document.querySelectorAll('section.block').forEach(function(sec){
-      var items = sec.querySelectorAll('[data-cat]');
-      if (!items.length) return;
-      var anyVisible = Array.prototype.some.call(items, function(el){ return el.style.display !== 'none'; });
-      sec.style.display = anyVisible ? '' : 'none';
-    });
-    noMatch.style.display = visible ? 'none' : 'block';
+  var searchInput = document.getElementById('searchInput');
+  var noResults = document.getElementById('noResults');
+  var searchable = Array.prototype.slice.call(document.querySelectorAll('[data-search]'));
+  var toast = document.getElementById('toast');
+  var toastTimer = null;
+
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
   }
-  searchInput.addEventListener('input', applyFilter);
-  chips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      activeFilter = chip.getAttribute('data-filter');
-      chips.forEach(function(c){
-        var on = c === chip;
-        c.classList.toggle('active', on);
-        c.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      applyFilter();
-    });
-  });
-  /* ----- Estimate builder ----- */
-  var selected = {};
-  var crosspostOn = false;
-  var totalEl = document.getElementById('estTotal');
-  var itemsEl = document.getElementById('estItems');
-  var noteEl = document.getElementById('estNote');
-  function packageSubtotal(){
-    var sum = 0;
-    Object.keys(selected).forEach(function(k){ if (selected[k].kind === 'package') sum += selected[k].price; });
-    return sum;
-  }
-  function crosspostAmount(){ return crosspostOn ? Math.round(packageSubtotal() * 0.5) : 0; }
-  function render(){
-    var names = [];
-    var total = 0;
-    Object.keys(selected).forEach(function(k){
-      names.push(selected[k].name + ' ' + fmt(selected[k].price));
-      total += selected[k].price;
-    });
-    var cp = crosspostAmount();
-    if (crosspostOn) {
-      names.push('Multi-platform cross-posting (+50% of packages) ' + fmt(cp));
-      total += cp;
-    }
-    totalEl.textContent = fmt(total);
-    itemsEl.textContent = names.length ? names.join('  |  ') : 'No items yet. Tap Add to estimate on any package to build a quote.';
-    document.querySelectorAll('.est-add').forEach(function(btn){
-      var key = btn.getAttribute('data-est-key');
-      var on = (key === 'crosspost') ? crosspostOn : !!selected[key];
-      btn.classList.toggle('added', on);
-      btn.textContent = on ? 'Added' : 'Add to estimate';
-    });
-  }
-  function note(msg){
-    noteEl.textContent = msg;
-    noteEl.hidden = !msg;
-    if (msg) setTimeout(function(){ noteEl.hidden = true; }, 6000);
-  }
-  document.querySelectorAll('.est-add').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var key = btn.getAttribute('data-est-key');
-      var kind = btn.getAttribute('data-est-kind');
-      if (key === 'crosspost') {
-        crosspostOn = !crosspostOn;
-        if (crosspostOn && packageSubtotal() === 0) {
-          note('Cross-posting is 50% of your selected packages. Add a package first and it will price itself.');
-        }
-        render();
-        return;
-      }
-      if (selected[key]) { delete selected[key]; render(); return; }
-      if (key === 'bundle') {
-        var dropped = [];
-        ['review', 'short'].forEach(function(k){
-          if (selected[k]) { dropped.push(selected[k].name); delete selected[k]; }
-        });
-        if (dropped.length) {
-          note('Bundle includes the review and Short, so ' + dropped.join(' and ') + ' were removed from the estimate.');
-        }
-      }
-      if ((key === 'review' || key === 'short') && selected['bundle']) {
-        delete selected['bundle'];
-        note('Bundle removed: it already includes the review and Short. Add the bundle instead to save $100.');
-      }
-      selected[key] = {
-        name: btn.getAttribute('data-est-name'),
-        price: parseInt(btn.getAttribute('data-est-price'), 10),
-        kind: kind
-      };
-      render();
-    });
-  });
-  document.getElementById('clearEstimate').addEventListener('click', function(){
-    selected = {}; crosspostOn = false; note(''); render();
-  });
-  document.getElementById('copyEstimate').addEventListener('click', function(){
-    var lines = ['Kamani Brown estimate (USD):'];
-    var total = 0;
-    Object.keys(selected).forEach(function(k){
-      lines.push('- ' + selected[k].name + ': ' + fmt(selected[k].price));
-      total += selected[k].price;
-    });
-    if (crosspostOn) {
-      lines.push('- Multi-platform cross-posting (+50% of packages): ' + fmt(crosspostAmount()));
-      total += crosspostAmount();
-    }
-    lines.push('Total: ' + fmt(total));
-    lines.push('Prices in USD. Email kamanibrown@gmail.com to confirm fit and availability.');
-    var text = lines.join('\n');
+
+  function copyText(text, btn){
     function done(){
-      itemsEl.textContent = 'Estimate copied. Paste it into your email to Kamani.';
-      setTimeout(render, 2600);
+      showToast('Copied: ' + text);
+      if(btn){
+        var old = btn.textContent;
+        btn.classList.add('copied');
+        btn.textContent = 'Copied ✓';
+        setTimeout(function(){ btn.classList.remove('copied'); btn.textContent = old; }, 1400);
+      }
     }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+    } else { fallback(); }
     function fallback(){
       var ta = document.createElement('textarea');
-      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); done(); }
-      catch(e){ itemsEl.textContent = text; }
-      document.body.removeChild(ta);
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(ta); done();
     }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
-    } else { fallback(); }
+  }
+
+  // Search / filter
+  searchInput.addEventListener('input', function(){
+    var q = searchInput.value.trim().toLowerCase();
+    var visible = 0;
+    searchable.forEach(function(el){
+      var hay = (el.getAttribute('data-search') + ' ' + (el.getAttribute('data-name')||'')).toLowerCase();
+      var match = !q || hay.indexOf(q) !== -1;
+      el.classList.toggle('hidden', !match);
+      if(match) visible++;
+    });
+    // Hide section grids that are fully empty is overkill; just show empty notice
+    noResults.classList.toggle('show', q.length > 0 && visible === 0);
   });
-  render();
+
+  // Estimate state: keyed by element
+  var selected = new Map(); // el -> {name, price, label}
+  var estimator = document.getElementById('estimator');
+  var estTotal = document.getElementById('estTotal');
+  var estDetail = document.getElementById('estDetail');
+
+  function fmt(n){ return '$' + n.toLocaleString('en-US'); }
+
+  function renderEstimate(){
+    var total = 0; var names = [];
+    selected.forEach(function(v){ total += v.price; names.push(v.name); });
+    estTotal.textContent = fmt(total) + ' USD';
+    estDetail.textContent = selected.size === 0 ? '0 items in estimate' : names.join(' · ');
+    estDetail.title = names.join(', ');
+    estimator.classList.toggle('show', selected.size > 0);
+  }
+
+  function bindAdd(btn){
+    btn.addEventListener('click', function(){
+      var host = btn.closest('[data-name]');
+      if(!host) return;
+      var name = host.getAttribute('data-name');
+      var price = parseInt(host.getAttribute('data-price') || '0', 10);
+      var label = host.getAttribute('data-label') || '';
+      if(selected.has(host)){
+        selected.delete(host);
+        btn.classList.remove('added');
+        btn.textContent = btn.classList.contains('row-btn') ? '+ Add' : (host.classList.contains('bundle') ? '+ Add bundle to estimate' : '+ Estimate');
+        if(host.classList.contains('bundle') && !btn.classList.contains('row-btn')) btn.textContent = '+ Add bundle to estimate';
+      } else {
+        if(price <= 0){ showToast(name + ' is priced on request'); return; }
+        selected.set(host, {name:name, price:price, label:label});
+        btn.classList.add('added');
+        btn.textContent = 'Added ✓';
+      }
+      renderEstimate();
+    });
+  }
+  document.querySelectorAll('.add-btn').forEach(bindAdd);
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var host = btn.closest('[data-name]');
+      if(!host) return;
+      var name = host.getAttribute('data-name');
+      var label = host.getAttribute('data-label') || '';
+      copyText(name + ' — ' + label, btn);
+    });
+  });
+
+  document.getElementById('estClear').addEventListener('click', function(){
+    selected.clear();
+    document.querySelectorAll('.add-btn.added').forEach(function(b){
+      b.classList.remove('added');
+      b.textContent = b.classList.contains('row-btn') ? '+ Add' : '+ Estimate';
+    });
+    // restore bundle button label
+    document.querySelectorAll('.bundle .add-btn').forEach(function(b){ b.textContent = '+ Add bundle to estimate'; });
+    renderEstimate();
+  });
+
+  document.getElementById('estCopy').addEventListener('click', function(){
+    if(selected.size === 0) return;
+    var lines = []; var total = 0;
+    selected.forEach(function(v){ lines.push('• ' + v.name + ' — ' + v.label); total += v.price; });
+    lines.push('Total: ' + fmt(total) + ' USD');
+    copyText(lines.join('\n'), null);
+  });
+
+  /* Enquiry panel + mail-app handoff fix.
+     Diagnosis: the other pages' "Open Mail App" buttons were plain
+     mailto anchors with no target. Inside the framed in-app webview
+     that navigation dies inside the frame — no mail app opens and
+     nothing tells the user. Gmail worked because it is a plain
+     https link opened in a new tab. Fix: target="_top" on the link,
+     the handoff re-issued from the click as a top-level navigation,
+     and a visible fallback (address copied + note) when the page is
+     still in front a second later, i.e. no mail app took over. */
+  var dialog = document.getElementById('enquireDialog');
+  var mailBtn = document.getElementById('enquireMail');
+  var mailStatus = document.getElementById('enquireStatus');
+  var lastTrigger = null;
+
+  function openDialog(trigger){
+    lastTrigger = trigger || null;
+    if(mailStatus){ mailStatus.classList.remove('show'); mailStatus.textContent = ''; }
+    dialog.classList.add('open');
+    dialog.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    var closeBtn = dialog.querySelector('.enquire-close');
+    if(closeBtn) closeBtn.focus();
+  }
+  function closeDialog(){
+    dialog.classList.remove('open');
+    dialog.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if(lastTrigger && lastTrigger.focus) lastTrigger.focus();
+  }
+  document.querySelectorAll('[data-enquire]').forEach(function(el){
+    el.addEventListener('click', function(){ openDialog(el); });
+  });
+  dialog.querySelectorAll('[data-enquire-close]').forEach(function(el){
+    el.addEventListener('click', closeDialog);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && dialog.classList.contains('open')) closeDialog();
+  });
+  document.getElementById('enquireCopy').addEventListener('click', function(){
+    copyText('kamanibrown@gmail.com', this);
+  });
+
+  if(mailBtn){
+    mailBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      var url = mailBtn.href;
+      if(mailStatus){
+        mailStatus.textContent = 'Opening your mail app…';
+        mailStatus.classList.add('show');
+      }
+      // Re-issue the handoff at the top level: a mailto navigation
+      // attempted by the frame itself is what was being swallowed.
+      var a = document.createElement('a');
+      a.href = url;
+      a.target = '_top';
+      a.rel = 'noopener';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      // If we are still here and visible shortly after, no mail app
+      // took over (webview blocked it / no mail client set). Never
+      // leave the tap looking dead: copy the address and say so.
+      setTimeout(function(){
+        if(!dialog.classList.contains('open')) return;
+        if(document.visibilityState && document.visibilityState !== 'visible') return;
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText('kamanibrown@gmail.com').catch(function(){});
+        }
+        if(mailStatus){
+          mailStatus.textContent = 'Your mail app didn’t open — some in-app browsers block that handoff. The address kamanibrown@gmail.com has been copied, so you can paste it into your mail app, or use “Compose in Gmail” above.';
+        }
+      }, 1000);
+    });
+  }
 })();
 </script>
 </body>
